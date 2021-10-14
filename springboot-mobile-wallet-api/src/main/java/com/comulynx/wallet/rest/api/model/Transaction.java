@@ -7,79 +7,79 @@ import javax.persistence.*;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-    @Column(unique = true,nullable = false)
+    private long id;
+    @Column(unique = true, nullable = false)
     private String transactionId;
-	@Column(nullable = false)
-	private String customerId;
-	@Column(nullable = false)
-	private String accountNo;
-	@Column(nullable = false)
-	private double amount;
-	@Column(nullable = false)
-	private double balance;
-	@Column(nullable = false)
-	private String transactionType;
-	@Column(nullable = false)
-	private String debitOrCredit;
-	
-	public Transaction() {
-		
-	}
+    @Column(nullable = false)
+    private String customerId;
+    @Column(nullable = false)
+    private String accountNo;
+    @Column(nullable = false)
+    private double amount;
+    @Column(nullable = false)
+    private double balance;
+    @Column(nullable = false)
+    private String transactionType;
+    @Column(nullable = false)
+    private String debitOrCredit;
 
-	public String getTransactionId() {
-		return transactionId;
-	}
+    public Transaction() {
 
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
-	}
+    }
 
-	public String getCustomerId() {
-		return customerId;
-	}
+    public String getTransactionId() {
+        return transactionId;
+    }
 
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
 
-	public String getAccountNo() {
-		return accountNo;
-	}
+    public String getCustomerId() {
+        return customerId;
+    }
 
-	public void setAccountNo(String accountNo) {
-		this.accountNo = accountNo;
-	}
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
 
-	public double getAmount() {
-		return amount;
-	}
+    public String getAccountNo() {
+        return accountNo;
+    }
 
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
+    public void setAccountNo(String accountNo) {
+        this.accountNo = accountNo;
+    }
 
-	public double getBalance() {
-		return balance;
-	}
+    public double getAmount() {
+        return amount;
+    }
 
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
 
-	public String getTransactionType() {
-		return transactionType;
-	}
+    public double getBalance() {
+        return balance;
+    }
 
-	public void setTransactionType(String transactionType) {
-		this.transactionType = transactionType;
-	}
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 
-	public String getDebitOrCredit() {
-		return debitOrCredit;
-	}
+    public String getTransactionType() {
+        return transactionType;
+    }
 
-	public void setDebitOrCredit(String debitOrCredit) {
-		this.debitOrCredit = debitOrCredit;
-	}
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public String getDebitOrCredit() {
+        return debitOrCredit;
+    }
+
+    public void setDebitOrCredit(String debitOrCredit) {
+        this.debitOrCredit = debitOrCredit;
+    }
 }

@@ -70,10 +70,12 @@ public class CustomerController {
 				return ResponseEntity.status(404).body("Customer account not found ");
 			}
 
-			response.addProperty("Customer Name",customer.get().getFirstName()+""+customer.get().getLastName());
-			response.addProperty("Customer ID",customer.get().getCustomerId());
+			response.addProperty("firstName",customer.get().getFirstName());
+			response.addProperty("lastName",customer.get().getLastName());
+			response.addProperty("pin",customer.get().getPin());
+			response.addProperty("customerId",customer.get().getCustomerId());
 			response.addProperty("email",customer.get().getEmail());
-			response.add("Customer Account", new Gson().toJsonTree(account.get()));
+			response.add("customerAccount", new Gson().toJsonTree(account.get()));
 			return ResponseEntity.ok().body(gson.toJson(response));
 
 		} catch (Exception ex) {
