@@ -75,7 +75,7 @@ public class CustomerController {
 			response.addProperty("pin",customer.get().getPin());
 			response.addProperty("customerId",customer.get().getCustomerId());
 			response.addProperty("email",customer.get().getEmail());
-			response.add("customerAccount", new Gson().toJsonTree(account.get()));
+			response.add("accountNo", new Gson().toJsonTree(account.get().getAccountNo()));
 			return ResponseEntity.ok().body(gson.toJson(response));
 
 		} catch (Exception ex) {
