@@ -3,7 +3,6 @@ package com.comulynx.wallet.rest.api.controller;
 import com.comulynx.wallet.rest.api.AppUtilities;
 import com.comulynx.wallet.rest.api.exception.ResourceNotFoundException;
 import com.comulynx.wallet.rest.api.model.Account;
-import com.comulynx.wallet.rest.api.model.Customer;
 import com.comulynx.wallet.rest.api.model.Transaction;
 import com.comulynx.wallet.rest.api.repository.AccountRepository;
 import com.comulynx.wallet.rest.api.repository.TransactionRepository;
@@ -98,7 +97,7 @@ public class TransactionController {
 			Transaction transactionDebit = new Transaction();
 			transactionDebit.setTransactionId(debitTransactionId);
 			transactionDebit.setCustomerId(customerId);
-			transactionDebit.setAccountNo(senderAccount.getAccountNo());
+			transactionDebit.setAccountNo(accountTo);
 			transactionDebit.setAmount(amount);
 			transactionDebit.setBalance(senderAccount.getBalance() - amount);
 			transactionDebit.setTransactionType("FT");
@@ -108,7 +107,7 @@ public class TransactionController {
 			Transaction transactionCredit = new Transaction();
 			transactionCredit.setTransactionId(creditTransactionId);
 			transactionCredit.setCustomerId(beneficiaryAccount.getCustomerId());
-			transactionCredit.setAccountNo(beneficiaryAccount.getAccountNo());
+			transactionCredit.setAccountNo(accountTo);
 			transactionCredit.setAmount(amount);
 			transactionCredit.setBalance(beneficiaryAccount.getBalance() + amount);
 			transactionCredit.setTransactionType("FT");
